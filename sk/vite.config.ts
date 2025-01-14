@@ -1,6 +1,7 @@
 import { sveltekit } from "@sveltejs/kit/vite";
 import type { UserConfig } from "vite";
-import fs from "fs";
+import fs from "node:fs";
+import tailwindcss from "@tailwindcss/vite";
 
 // detect if we're running inside docker and set the backend accordingly
 const pocketbase_url = fs.existsSync("/.dockerenv")
@@ -8,7 +9,7 @@ const pocketbase_url = fs.existsSync("/.dockerenv")
   : "http://127.0.0.1:8090"; // localhost-to-localhost
 
 const config: UserConfig = {
-  plugins: [sveltekit()],
+  plugins: [tailwindcss(),sveltekit()],
   server: {
     proxy: {
       // proxy "/api" and "/_" to pocketbase_url
@@ -19,3 +20,4 @@ const config: UserConfig = {
 };
 
 export default config;
+

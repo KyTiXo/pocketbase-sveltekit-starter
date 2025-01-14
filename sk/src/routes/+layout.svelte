@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../app.scss";
+  import "../style.css";
   import { base } from "$app/paths";
   import { page } from "$app/stores";
   import Alerts from "$lib/components/Alerts.svelte";
@@ -20,12 +20,13 @@
   <title>{metadata.title} | {config.site?.name}</title>
 </svelte:head>
 
-<header class="container">
-  <a href={`${base}/`} class="logo">
+<header class="w-full">
+  <!-- <a href={`${base}/`} class="logo">
     <img src={`${base}/favicon.svg`} alt="application logo" />
-  </a>
-  <Nav />
-  <LoginBadge signupAllowed={config.signupAllowed} />
+  </a> -->
+  <Nav>
+    <LoginBadge signupAllowed={config.signupAllowed} />
+  </Nav>
 </header>
 <main class="container">
   <Alerts />

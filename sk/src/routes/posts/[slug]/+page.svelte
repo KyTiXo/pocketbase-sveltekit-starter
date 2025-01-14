@@ -9,8 +9,9 @@
   });
 </script>
 
-<article>
+<article class="prose lg:prose-xl">
   <pre class="body">{record.body}</pre>
+  <h1>title</h1>
   {#each record.files ?? [] as file, index}
     {@const src = client.files.getUrl(record, file)}
     {@const title = `image ${index + 1} for: ${record.title}`}

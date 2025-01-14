@@ -26,31 +26,8 @@
 <!--
   @component
   ```svelte
-  <Spinner 
+  <Spinner
   ```
  -->
-<span class="loader" class:active></span>
-
-<style lang="scss">
-  .loader {
-    width: 1em;
-    height: 1em;
-    border: 0.2em solid var(--links);
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    &.active {
-      border-bottom-color: transparent; // 3/4 border solid, 1/4 transparent
-      animation: rotation 1s linear infinite;
-    }
-  }
-
-  @keyframes rotation {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-</style>
+<span class="loading loading-dots loading-md hidden" class:inline-block={active}
+></span>

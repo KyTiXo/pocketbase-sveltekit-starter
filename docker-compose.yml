@@ -1,5 +1,3 @@
-version: '3.5'
-
 services:
   pb:
     image: alpine:latest
@@ -26,4 +24,6 @@ services:
       - ${PWD}/pb:/app/pb
     environment:
       - HOME=/app/sk
-    working_dir: /app/sk
+#     working_dir: /app/sk
+
+
